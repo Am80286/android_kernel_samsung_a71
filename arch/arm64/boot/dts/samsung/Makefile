@@ -33,8 +33,8 @@ SEC_M40_SWA_DTBO := \
 
 # A70Q(SM6150)
 SEC_A70Q_EUR_DTBO := \
-                sm6150-sec-a70q-eur-overlay-r00.dtbo \
-                sm6150-sec-a70q-eur-overlay-r01.dtbo \
+				sm6150-sec-a70q-eur-overlay-r00.dtbo \
+				sm6150-sec-a70q-eur-overlay-r01.dtbo \
 				sm6150-sec-a70q-eur-overlay-r02.dtbo \
 				sm6150-sec-a70q-eur-overlay-r03.dtbo \
 				sm6150-sec-a70q-eur-overlay-r05.dtbo \
@@ -485,6 +485,9 @@ $(eval $(call sec_dtbo_build, \
 		
 $(eval $(call sec_dtbo_build, \
 		$(SEC_GTA4XLVEWIFI_KOR_DTBO),$(CONFIG_SEC_GTA4XLVEWIFI_KOR_OPEN),$(SEC_ATOLL_BASE_DTB)))		
+
+$(eval $(call sec_dtbo_build, \
+		$(SEC_R1Q_EUR_DTBO),$(CONFIG_SEC_R1Q_EUR_PROJECT),$(SEC_SM7150_BASE_DTB)))
 endif
 
 ifeq ($(CONFIG_ARM64),y)
