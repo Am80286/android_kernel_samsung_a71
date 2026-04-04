@@ -1813,12 +1813,12 @@ static int sx9360_parse_dt(struct sx9360_p *data, struct device *dev)
 static int sx9360_ccic_handle_notification(struct notifier_block *nb,
 		unsigned long action, void *data)
 {
-	PD_NOTI_ATTACH_TYPEDEF usb_typec_info = *(PD_NOTI_ATTACH_TYPEDEF *)data;
+	CC_NOTI_ATTACH_TYPEDEF usb_typec_info = *(CC_NOTI_ATTACH_TYPEDEF *)data;
 	struct sx9360_p *pdata =
 		container_of(nb, struct sx9360_p, ccic_nb);
 	static int pre_attach;
 
-	if (usb_typec_info.id != PDIC_NOTIFY_ID_ATTACH)
+	if (usb_typec_info.id != CCIC_NOTIFY_ID_ATTACH)
 		return 0;
 
 	if (pre_attach == usb_typec_info.attach)
